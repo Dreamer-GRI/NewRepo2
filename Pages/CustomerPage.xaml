@@ -1,0 +1,30 @@
+﻿<Page x:Class="PR_VR3_GRISHIN.Pages.CustomerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PR_VR3_GRISHIN.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomerPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <DataGrid x:Name="dgCustomer" AutoGenerateColumns="False" IsReadOnly="True" Height="350">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя заказчика" Binding="{Binding CustomerName}"  Width="*"/>
+                    <DataGridTextColumn Header="Фамилия заказчика" Binding="{Binding CustomerSurname}" Width="*"/>
+                    <DataGridTextColumn Header="Номер заказчика" Binding="{Binding CustomerNumber}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid>
+                <Button x:Name="btnAdd" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="150 10 0 0" Width="150" Height="30" Cursor="Hand" Click="btnAdd_Click"/>
+                <Button x:Name="btnDel" HorizontalAlignment="Right" FontSize="18" Content="Удалить" Margin="0 10 150 0" Width="150" Height="30" Cursor="Hand" Click="btnDel_Click"/>
+                <Button x:Name="btnChange" HorizontalAlignment="Center" FontSize="18" Content="Изменить" Margin="5 10 5 0" Width="150" Height="30" Cursor="Hand" Click="btnChange_Click"/>
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Page>
