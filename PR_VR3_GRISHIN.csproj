@@ -103,11 +103,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CustomerChangePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderChangePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,11 +132,20 @@
     <Compile Include="Pages\CustomerAddPage.xaml.cs">
       <DependentUpon>CustomerAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CustomerChangePage.xaml.cs">
+      <DependentUpon>CustomerChangePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderAddPage.xaml.cs">
+      <DependentUpon>OrderAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderChangePage.xaml.cs">
+      <DependentUpon>OrderChangePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>

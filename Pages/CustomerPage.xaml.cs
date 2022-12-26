@@ -30,7 +30,15 @@ namespace PR_VR3_GRISHIN.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-
+            Customer customer = dgCustomer.SelectedItem as Customer;
+            if (customer == null)
+            {
+                MessageBox.Show("Поле не выбрано");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new CustomerChangePage(customer));
+            }
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -52,6 +60,11 @@ namespace PR_VR3_GRISHIN.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new CustomerAddPage());
+        }
+
+        private void btnBckClick(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new MainPage());
         }
     }
 }

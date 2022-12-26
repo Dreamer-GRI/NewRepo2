@@ -9,6 +9,22 @@
       Title="OrderPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <DataGrid x:Name="dgOrder" AutoGenerateColumns="False" IsReadOnly="True" Height="350">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя заказчика" Binding="{Binding OrderNumber}"  Width="*"/>
+                    <DataGridTextColumn Header="Фамилия заказчика" Binding="{Binding OrderDate}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid>
+                <Button x:Name="btnAdd" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="50 10 0 0" Width="150" Height="30" Cursor="Hand" Click="btnAdd_Click"/>
+                <Button x:Name="btnDel" HorizontalAlignment="Center" FontSize="18" Content="Удалить" Margin="180 10 0 0" Width="150" Height="30" Cursor="Hand" Click="btnDel_Click"/>
+                <Button x:Name="btnChange" HorizontalAlignment="Center" FontSize="18" Content="Изменить" Margin="5 10 180 0" Width="150" Height="30" Cursor="Hand" Click="btnChange_Click"/>
+                <Button x:Name="btnBack" HorizontalAlignment="Right" FontSize="18" Content="Назад" Margin="0 10 50 0" Width="150" Height="30" Cursor="Hand" Click="btnBckClick"/>
+            </Grid>
+
+        </StackPanel>
     </Grid>
 </Page>

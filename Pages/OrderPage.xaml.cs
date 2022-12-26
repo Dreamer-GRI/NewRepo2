@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PR_VR3_GRISHIN.Classes;
 
 namespace PR_VR3_GRISHIN.Pages
 {
@@ -23,6 +24,46 @@ namespace PR_VR3_GRISHIN.Pages
         public OrderPage()
         {
             InitializeComponent();
+            dgOrder.ItemsSource = ConnectHelper.odbEnt.Order.ToList();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new OrderAddPage());
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = dgOrder.SelectedItem as Order;
+            if (order == null) MessageBox.Show("Запись не выбрана", "Ошибка удаления", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+            {
+
+                if (MessageBox.Show("Хотите удалить выбранную запись?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    ConnectHelper.odbEnt.Order.Remove(order);
+                    ConnectHelper.odbEnt.SaveChanges();
+                    dgOrder.ItemsSource = ConnectHelper.odbEnt.Order.ToList();
+                }
+            }
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = dgOrder.SelectedItem as Order;
+            if (order == null)
+            {
+                MessageBox.Show("Поле не выбрано");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new OrderChangePage(order));
+            }
+        }
+
+        private void btnBckClick(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new MainPage());
         }
     }
 }
